@@ -44,8 +44,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Merge dev into main
         run: |
+          git switch main
+          git merge origin/dev
+          git push
           git switch main
           git merge origin/dev
           git push
